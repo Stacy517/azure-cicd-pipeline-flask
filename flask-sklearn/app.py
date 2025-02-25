@@ -32,7 +32,7 @@ def predict():
         clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
         # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
         # clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
-    except （FileNotFoundError, OSError） as e:
+    except (FileNotFoundError, OSError) as e:
         LOG.info("JSON payload: %s", str(e))
         return jsonify({"error": f"Model loading failed: {str(e)}"}), 500
 
