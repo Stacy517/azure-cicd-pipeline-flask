@@ -39,6 +39,7 @@ def predict():
         # clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
     except (FileNotFoundError, OSError) as e:
         LOG.info("JSON payload: %s", str(e))
+        print('-------lichao--------', str(e))
         return jsonify({"error": f"Model loading failed: {str(e)}"}), 500
 
     json_payload = request.json
