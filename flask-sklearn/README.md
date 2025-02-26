@@ -1,6 +1,6 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project is a machine learning microservice for house price prediction using Flask and Scikit-learn, deployed with Azure CI/CD pipelines.
 
 ## Project Plan
 <TODO: Project Plan
@@ -18,6 +18,17 @@
 * Project running on Azure App Service
 
 * Project cloned into Azure Cloud Shell
+setup the cloud shell and create a python virtual environment
+```bash
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
+
+* clone the project in Azure Cloud Shell
+git clone https://github.com/Stacy517/azure-cicd-pipeline-flask.git
+![alt text](image.png)
+
+* Run initial setup
+make all
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
