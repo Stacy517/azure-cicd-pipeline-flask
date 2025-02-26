@@ -23,7 +23,7 @@ def home():
     try:
         html = "<h3>Sklearn Prediction Home</h3>"
         return html
-    except Exception as e:
+    except (FileNotFoundError, OSError) as e:
         LOG.info("JSON payload: %s", str(e))
         return jsonify({"error": f"Model loading failed: {str(e)}"}), 500
     # return html.format(format)
