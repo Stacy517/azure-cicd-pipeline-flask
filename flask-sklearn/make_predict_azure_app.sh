@@ -25,6 +25,6 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-   #   -X POST https://myapp.azurewebsites.net:$PORT/predict
-   -X POST https://songyang-fuhdg7b0babfhzdw.eastasia-01.azurewebsites.net:$PORT/predict
+     -X POST https://songyang-fuhdg7b0babfhzdw.eastasia-01.azurewebsites.net:$PORT/predict
+      #   -X POST https://myapp.azurewebsites.net:$PORT/predict
      #your application name <yourappname>goes here
