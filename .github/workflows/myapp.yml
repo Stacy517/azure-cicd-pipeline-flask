@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./flask-sklearn/starter_files
+        working-directory: ./flask-sklearn
 
     steps:
     - uses: actions/checkout@v4
