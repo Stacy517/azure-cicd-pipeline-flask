@@ -15,13 +15,21 @@ This project is a machine learning microservice for house price prediction using
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Setup Azure Cloud Shell
-![alt text](image.png)
+# Create a web app
+Go to Azure protal, click app service, then create a app service named songyang
+Set up the app service:
+Using the exsiting resource group
+Set the Runtime stack as python 3.9 
+Set the Pricing plan as Free F1 # very important
+
+# Setup Azure Cloud Shell and clone the project
+Setup Azure Cloud Shell
+![alt text](./screenshot/azure_cloud_shell.png)
 
 
 * clone the project in Azure Cloud Shell
 git clone https://github.com/Stacy517/azure-cicd-pipeline-flask.git
-![alt text](image-1.png)
+![alt text](./screenshot/screenshot-git-clone.png)
 
 * Go to the project directory
 cd azure-cicd-pipeline-flask/flask-sklearn
@@ -30,27 +38,30 @@ cd azure-cicd-pipeline-flask/flask-sklearn
 python3 -m venv ~/.devops
 source ~/.devops/bin/activate
 
-* Project running on Azure App Service
+# Project running on Azure App Service
 chmod +x make_predict_azure_app.sh
 ./make_predict_azure_app.sh
-![alt text](image-2.png)
+![alt text](./screenshot/running_app.png)
 
-* Project cloned into Azure Cloud Shell
 
-* Run initial setup
+# Run initial setup
 make all
 
-
-
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+![alt text](./screenshot/makeall_test.png)
+
 
 * Output of a test run
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+* Successful deploy of the project in Azure Pipelines.  
+
 
 * Running Azure App Service from Azure Pipelines automatic deployment
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+* Successful prediction from deployed flask app in Azure Cloud Shell.  
+[![Python application test with Github Actions](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml/badge.svg)](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml)
+
+
 The output should look similar to this:
 
 ```bash
