@@ -15,19 +15,24 @@ def test_home_page(client):
 
 def test_predict_endpoint(client):
     test_payload = {
-        "CRIM": [0.00632],
-        "ZN": [18.0],
-        "INDUS": [2.31],
-        "CHAS": [0],
-        "NOX": [0.538],
-        "RM": [6.575],
-        "AGE": [65.2],
-        "DIS": [4.09],
-        "RAD": [1],
-        "TAX": [296],
-        "PTRATIO": [15.3],
-        "B": [396.9],
-        "LSTAT": [4.98]
+       "CHAS":{
+           "0":0
+       },
+       "RM":{
+           "0":6.575
+       },
+       "TAX":{
+           "0":296.0
+       },
+       "PTRATIO":{
+           "0":15.3
+       },
+       "B":{
+           "0":396.9
+       },
+       "LSTAT":{
+           "0":4.98
+       }
     }
 
     # send request
