@@ -40,6 +40,8 @@ chmod +x make_predict_azure_app.sh
 * Run initial setup
 make all
 
+
+
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
 * Output of a test run
