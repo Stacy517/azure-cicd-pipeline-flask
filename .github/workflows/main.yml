@@ -16,12 +16,22 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.9.x
+
     - name: Install dependencies
       run: |
         make install
+
     - name: Lint with pylint
       run: |
         make lint
+
     - name: Test with pytest
       run: |
         make test
+  
+    - name: Deploy to Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: "songyang"
+        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+        package: ./flask-sklearn

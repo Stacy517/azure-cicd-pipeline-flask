@@ -21,6 +21,7 @@ Set up the app service:
 Using the exsiting resource group
 Set the Runtime stack as python 3.9 
 Set the Pricing plan as Free F1 # very important
+![alt text](./screenshot/create_web_service.png)
 
 # Setup Azure Cloud Shell and clone the project
 Setup Azure Cloud Shell
@@ -50,6 +51,33 @@ make all
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 ![alt text](./screenshot/makeall_test.png)
 
+# Setup Azure Pipelines
+<!-- * First, create a managed identity for the app service
+Because we create the app service as free F1, we need to create a user assigned  identity for the app service.
+![alt text](./screenshot/create_identity.png)
+
+* Assign the managed identity to the app service
+Go to the app service, click settings > identity, click user assigned, then assign the managed identity to the app service.
+
+* Add role assignment to the managed identity
+Click the Access control (IAM) in the left menu, click Add > Add role assignment
+choose the role as Website contributor, go next, then choose the managed identity, select the user assigned identity you created, then click assign -->
+
+<!-- Go to the exsiting resource group, click the Access control (IAM) in the left menu, click Add > Add role assignment. Choose the role as Managed Identity Contributor, go next, then choose the managed identity, select the user assigned identity you created, then click assign. If you don't do this step, you will get the error message: "The identity does not have access to perform action blabla". -->
+
+<!-- * Finally, you can setup the deployment center for the app service
+Go to the app service, click settings > deployment center, then choose the source as GitHub, login your Github account, then choose the repository and branch you want to deploy, choose the user-assigned identity you created, then click save -->
+
+* Setup the deployment center of the app service
+Go to the app service, click settings > deployment center, then choose the source as GitHub, change the provider as "Building with Azure Pipelines". 
+
+* Setup the Azure pipeline
+Choose the repository and branch you want to deploy.
+Choose the exsiting Azure Pipeline YAML file. 
+![alt text](./screenshot/azure_pipeline.png)
+
+
+* Setup the pipeline
 
 * Output of a test run
 
