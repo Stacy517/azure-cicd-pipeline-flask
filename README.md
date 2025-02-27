@@ -78,6 +78,41 @@ Go to  Azure DevOps portal, click Pipelines > New pipeline, then choose the GitH
 Choose the exsiting Azure Pipeline YAML file. 
 ![alt text](./screenshot/azure_pipeline.png)
 
+# Configure self-hosted agents
+In the last step, you may get the error message:No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
+
+You can request a free parallelism grant or configure a self-hosted agent by this following steps:
+* create a VM
+az vm create \
+--name DevOpsAgentVM \
+--resource-group Azuredevops \
+--image Ubuntu2204 \
+--size Standard_B1s \
+--admin-username azureuser \
+--generate-ssh-keys \
+--public-ip-address-dns-name devops-agent-sg
+* login to the VM
+ssh azureuser@<vm_ip_address>
+
+* install the dependencies
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl gnupg2 software-properties-common unzip
+sudo apt install -y python3 python3-pip
+
+* download the agent 
+mkdir myagent && cd myagent
+wget https://vstsagentpackage.azureedge.net/agent/3.242.0/vsts-agent-linux-x64-3.242.0.tar.gz
+tar zxvf vsts-agent-linux-x64-3.242.0.tar.gz
+
+* run the agent
+./config.sh --unattended \
+--url https://dev.azure.com/{your_org_name} \  
+--auth pat \
+--token {你的PAT} \ 
+--pool Default \
+--agent devops-vm-agent \
+--replace \
+--acceptTeeEula
 
 * Setup the pipeline
 
