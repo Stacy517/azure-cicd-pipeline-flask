@@ -114,8 +114,13 @@ tar zxvf vsts-agent-linux-x64-3.242.0.tar.gz
 --replace \
 --acceptTeeEula
 
-* Setup the pipeline
 
+# Setup the pipeline project
+Go to Azure DevOps portal, click the left below button: project settings
+Go to the Pipelines > Service connections, click New service connection, then choose the Azure Resource Manager, then choose the subscription, resource group.
+then input the Service Connection Name, this name should be the same as the name you used in the Azure Pipeline YAML file.
+
+# Push the code to GitHub to trigger the pipeline
 * Output of a test run
 
 * Successful deploy of the project in Azure Pipelines.  
