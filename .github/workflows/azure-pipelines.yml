@@ -6,7 +6,10 @@ variables:
   working.directory: 'flask-sklearn'
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
+  demands:
+  - agent.name -equals MySelfHostedAgent
+
 
 steps:
 - task: UsePythonVersion@0
