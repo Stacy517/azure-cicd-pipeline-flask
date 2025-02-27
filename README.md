@@ -71,7 +71,7 @@ Go to the app service, click settings > deployment center, then choose the sourc
 * Setup the Azure pipeline
 Go to  Azure DevOps portal, click Pipelines > New pipeline, then choose the GitHub as the source, then choose the repository and branch you want to deploy.
 Choose the exsiting Azure Pipeline YAML file. 
-![alt text](./screenshot/azure_pipeline.png)
+![alt text](./screenshot/setup_azure_pipeline.png)
 
 # Configure self-hosted agents
 In the last step, you may get the error message:No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
@@ -103,7 +103,7 @@ tar zxvf vsts-agent-linux-x64-3.242.0.tar.gz
 ./config.sh --unattended \
 --url https://dev.azure.com/{your_org_name} \  
 --auth pat \
---token {你的PAT} \ 
+--token {your PAT} \ 
 --pool Default \
 --agent devops-vm-agent \
 --replace \
