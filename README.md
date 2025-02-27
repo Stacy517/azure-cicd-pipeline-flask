@@ -23,11 +23,11 @@ Set the Runtime stack as python 3.9
 Set the Pricing plan as Free F1 # very important
 ![alt text](./screenshot/create_web_service.png)
 
-# Setup Azure Cloud Shell and clone the project
+# Setup Azure Cloud Shell
 Setup Azure Cloud Shell
 ![alt text](./screenshot/azure_cloud_shell.png)
 
-
+# Clone the project in Azure Cloud Shell and Run initial setup(This following steps are for the Github Action to run the test, not for the Azure Pipelines.)
 * clone the project in Azure Cloud Shell
 git clone https://github.com/Stacy517/azure-cicd-pipeline-flask.git
 ![alt text](./screenshot/screenshot-git-clone.png)
@@ -39,13 +39,7 @@ cd azure-cicd-pipeline-flask/flask-sklearn
 python3 -m venv ~/.devops
 source ~/.devops/bin/activate
 
-# Project running on Azure App Service
-chmod +x make_predict_azure_app.sh
-./make_predict_azure_app.sh
-![alt text](./screenshot/running_app.png)
-
-
-# Run initial setup
+* Run initial setup
 make all
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
@@ -127,7 +121,7 @@ You may need to permit the job manually.
 * Running Azure App Service from Azure Pipelines automatic deployment
 ![alt text](./screenshot/deploy_success.png)
 
-
+# Project running on Azure App Service
 # Run the prediction test script to access the web service
 modify the test script in make_predict_azure_app.sh, update the url to make sure the domain is correct.
 
@@ -135,7 +129,7 @@ modify the test script in make_predict_azure_app.sh, update the url to make sure
 Open the cloud shell, run this command:
 az webapp log tail --name songyang --resource-group Azuredevops
 
-*Run this following command:
+* Run this following command: (you can run this command in the cloud shell or in the local terminal, if your web app enable public access.)
 chmod +x make_predict_azure_app.sh
 ./make_predict_azure_app.sh
 ![alt text](./screenshot/prediction.png)
