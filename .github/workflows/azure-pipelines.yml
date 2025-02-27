@@ -15,18 +15,8 @@ steps:
 
 - script: |
     cd ./flask-sklearn
-    make install
-  displayName: 'dependencies'
-
-- script: |
-    cd $(working.directory)
-    make lint
-  displayName: 'run lint'
-
-- script: |
-    cd $(working.directory)
-    make test
-  displayName: 'run test'
+    make all
+  displayName: 'make all'
 
 - task: AzureWebApp@1
   inputs:

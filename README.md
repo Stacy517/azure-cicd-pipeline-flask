@@ -51,6 +51,8 @@ make all
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 ![alt text](./screenshot/makeall_test.png)
 
+[![Python application test with Github Actions](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml/badge.svg)](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml)
+
 # Setup Azure Pipelines
 <!-- * First, create a managed identity for the app service
 Because we create the app service as free F1, we need to create a user assigned  identity for the app service.
@@ -72,7 +74,7 @@ Go to the app service, click settings > deployment center, then choose the sourc
 Go to the app service, click settings > deployment center, then choose the source as GitHub, change the provider as "Building with Azure Pipelines". 
 
 * Setup the Azure pipeline
-Choose the repository and branch you want to deploy.
+Go to  Azure DevOps portal, click Pipelines > New pipeline, then choose the GitHub as the source, then choose the repository and branch you want to deploy.
 Choose the exsiting Azure Pipeline YAML file. 
 ![alt text](./screenshot/azure_pipeline.png)
 
@@ -87,7 +89,7 @@ Choose the exsiting Azure Pipeline YAML file.
 * Running Azure App Service from Azure Pipelines automatic deployment
 
 * Successful prediction from deployed flask app in Azure Cloud Shell.  
-[![Python application test with Github Actions](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml/badge.svg)](https://github.com/Stacy517/azure-cicd-pipeline-flask/actions/workflows/myapp.yml)
+
 
 
 The output should look similar to this:
