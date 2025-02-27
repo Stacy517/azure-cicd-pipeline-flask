@@ -149,11 +149,9 @@ chmod +x make_predict_azure_app.sh
 
 ## Demo 
 <TODO: Add link Screencast on YouTube>
-I cannot access YouTube from China. So I cannot access YouTube and add the link here.
-But I really attached many screenshots to show the every single step.
-If you still want to see the demo video, I can send you the video to your email, or I can try to upload it to Github or some other platform.
+I cannot access YouTube from China. So I upload the video to screenrec.com.
+It limit 5 minutes for unregistered users. I hope I have recode the key steps...
 
-
-####
+https://screenrec.com/share/1i5ApOx6uS
 
 
