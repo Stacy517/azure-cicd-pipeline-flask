@@ -121,35 +121,42 @@ Go to the Pipelines > Service connections, click New service connection, then ch
 then input the Service Connection Name, this name should be the same as the name you used in the Azure Pipeline YAML file.
 
 # Push the code to GitHub to trigger the pipeline
-* Output of a test run
-
+After git push the code to GitHub, you will see the pipeline running.
+You may need to permit the job manually.
 * Successful deploy of the project in Azure Pipelines.  
-
-
 * Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  
-
+![alt text](./screenshot/deploy_success.png)
 
 
-The output should look similar to this:
+# Run the prediction test script to access the web service
+modify the test script in make_predict_azure_app.sh, update the url to make sure the domain is correct.
 
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+* Monitor the app log
+Open the cloud shell, run this command:
+az webapp log tail --name songyang --resource-group Azuredevops
+
+*Run this following command:
+chmod +x make_predict_azure_app.sh
+./make_predict_azure_app.sh
+![alt text](./screenshot/prediction.png)
+
 
 * Output of streamed log files from deployed application
+![alt text](./screenshot/app_log.png)
 
-> 
 
 ## Enhancements
 
 <TODO: A short description of how to improve the project in the future>
+1. **Advanced Monitoring** - Integrate Application Insights for detailed performance tracking
+2. **Auto-scaling** - Implement VM scale sets for the prediction service during peak loads
+3. **Model Versioning** - Add ML model registry instead of hardcoding the model file
 
 ## Demo 
-
 <TODO: Add link Screencast on YouTube>
+I cannot access YouTube from China. So I cannot access YouTube and add the link here.
+But I really attached many screenshots to show the every single step.
+If you still want to see the demo video, I can send you the video to your email, or I can try to upload it to Github or some other platform.
+
 
 
