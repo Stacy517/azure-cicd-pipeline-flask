@@ -28,10 +28,4 @@ jobs:
     - name: Test with pytest
       run: |
         make test
-  
-    - name: Deploy to Azure
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: "songyang"
-        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-        package: ./flask-sklearn
+        

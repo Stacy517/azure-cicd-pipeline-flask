@@ -1,0 +1,37 @@
+trigger:
+- main
+
+variables:
+  python.version: '3.9'
+  working.directory: 'flask-sklearn'
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+
+- script: |
+    cd ./flask-sklearn
+    make install
+  displayName: 'dependencies'
+
+- script: |
+    cd $(working.directory)
+    make lint
+  displayName: 'run lint'
+
+- script: |
+    cd $(working.directory)
+    make test
+  displayName: 'run test'
+
+- task: AzureWebApp@1
+  inputs:
+    appType: 'webAppLinux'
+    appName: 'songyang'
+    resourceGroupName: 'Azuredevops'
+    package: '$(System.DefaultWorkingDirectory)/flask-sklearn'
+  displayName: 'deploy to Azure'
